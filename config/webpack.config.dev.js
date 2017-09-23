@@ -178,6 +178,19 @@ module.exports = {
               // It enables caching results in ./node_modules/.cache/babel-loader/
               // directory for faster rebuilds.
               cacheDirectory: true,
+              plugins: [
+                [
+                  'react-css-modules',
+                  {
+                    generateScopedName: '[name]__[local]___[hash:base64:4]',
+                    filetypes: {
+                      ".mcss": {
+                        'syntax': 'postcss-scss',
+                      },
+                    },
+                  },
+                ],
+              ],
             },
           },
           // "postcss" loader applies autoprefixer to our CSS.
@@ -191,8 +204,17 @@ module.exports = {
               require.resolve('style-loader'),
               {
                 loader: require.resolve('css-loader'),
+              },
+            ],
+          },
+          {
+            test: /\.scss$/,
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
                 options: {
-                  importLoaders: 1,
+                  importLoaders: 2,
                 },
               },
               {
@@ -212,8 +234,50 @@ module.exports = {
                       ],
                       flexbox: 'no-2009',
                     }),
+                    require('lost'),
                   ],
                 },
+              },
+              {
+                loader: require.resolve('sass-loader'),
+              },
+            ],
+          },
+          {
+            test: /\.mcss$/,
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 2,
+                  modules: true,
+                  localIdentName: '[name]__[local]___[hash:base64:4]',
+                },
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  // Necessary for external CSS imports to work
+                  // https://github.com/facebookincubator/create-react-app/issues/2677
+                  ident: 'postcss',
+                  plugins: () => [
+                    require('postcss-flexbugs-fixes'),
+                    autoprefixer({
+                      browsers: [
+                        '>1%',
+                        'last 4 versions',
+                        'Firefox ESR',
+                        'not ie < 9', // React doesn't support IE8 anyway
+                      ],
+                      flexbox: 'no-2009',
+                    }),
+                    require('lost'),
+                  ],
+                },
+              },
+              {
+                loader: require.resolve('sass-loader'),
               },
             ],
           },
