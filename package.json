@@ -1,7 +1,6 @@
 {
-  "name": "chalet-starter-kit",
-  "version": "0.1.0",
-  "private": true,
+  "name": "chalet-template-kit",
+  "version": "0.0.1",
   "dependencies": {
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
