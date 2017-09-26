@@ -1,11 +1,15 @@
 import React from 'react'
-import DuckImage from '../assets/Duck.jpg'
+import ChaletImage from '../assets/Chalet.jpg'
 import './HomeView.scss'
+import './HomeView.mcss'
 
 export const HomeView = () => (
-  <div>
-    <h4>Welcome!</h4>
-    <img alt='This is a duck, because Redux!' className='duck' src={DuckImage} />
+  <div styleName='wrapper'>
+    <img alt='This is a duck, because Redux!' className='chalet' src={ChaletImage} />
+    <span className='source'>
+      {`Image originated from: `}
+      <a href='https://goo.gl/hWSqjM'>{`goo.gl/hWSqjM`}</a>
+    </span>
   </div>
 )
 

@@ -1,19 +1,21 @@
 import React from 'react'
 import { IndexLink, Link } from 'react-router'
 import PropTypes from 'prop-types'
-import './PageLayout.scss'
+import './PageLayout.mcss'
 
 export const PageLayout = ({ children }) => (
-  <div className='container text-center'>
-    <h1>React Redux Starter Kit</h1>
-    <IndexLink to='/' activeClassName='page-layout__nav-item--active'>Home</IndexLink>
-    {' · '}
-    <Link to='/counter' activeClassName='page-layout__nav-item--active'>Counter</Link>
-    <div className='page-layout__viewport'>
+  <section>
+    <ul styleName="nav" >
+      <li styleName='title'>Chalet Starter Kit</li>
+      <IndexLink to='/' styleName='item'>Home</IndexLink>
+      <Link to='/counter' styleName='item'>Counter</Link>
+    </ul>
+    <div>
       {children}
     </div>
-  </div>
+  </section>
 )
+
 PageLayout.propTypes = {
   children: PropTypes.node,
 }
