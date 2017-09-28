@@ -28,7 +28,7 @@ When you’re ready to deploy to production, create a minified bundle with `yarn
 
 ## Feature
 ### react css module
-There are [four ways to style react components](https://medium.com/@aghh1504/4-four-ways-to-style-react-components-ac6f323da822). Chalet template kit offers two of them, *CSS Stylesheet* and *CSS Modules*. Just use the former as usual. However, it apply `mcss` file extension to identity the later. They are both scss sytax but a little different in JSX. React css modules component automates loading of CSS Modules using **styleName** property.
+There are [four ways to style react components](https://medium.com/@aghh1504/4-four-ways-to-style-react-components-ac6f323da822). Chalet starter app offers two of them, *CSS Stylesheet* and *CSS Modules*. Just use the former as usual. However, it apply `mcss` file extension to identity the later. They are both scss sytax but a little different in JSX. React css modules component automates loading of CSS Modules using **styleName** property.
 
 ```jsx
 import 'styleContainsFoo.scss'
@@ -43,7 +43,6 @@ import 'styleContainsBar.msss'
 
 ### fractal project structure
 Please see complete explanation [here](https://github.com/davezuko/react-redux-starter-kit/wiki/Fractal-Project-Structure)
-
 
 ## Authors
 - Jay Chung - [twitter](https://twitter.com/wuceh14678)
