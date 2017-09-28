@@ -1,7 +1,7 @@
 {
-  "name": "chalet-template-kit",
+  "name": "chalet-starter-app",
   "version": "0.0.1",
-  "homepage": "https://chungchiehlun.github.io/chalet-template-kit",
+  "homepage": "https://chungchiehlun.github.io/chalet-starter-app",
   "dependencies": {
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
